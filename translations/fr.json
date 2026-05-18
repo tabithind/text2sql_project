@@ -1,0 +1,40 @@
+{
+    "app.title": "QueryAI",
+    "login.title": "Connexion à votre espace",
+    "login.email": "Email",
+    "login.password": "Mot de passe",
+    "login.btn_user": "Connexion Utilisateur",
+    "login.admin_link": "Vous êtes admin d'une entreprise ?",
+    "login.btn_admin": "Accéder à l'espace Admin",
+    
+    "admin.dashboard": "Tableau de Bord Admin",
+    "admin.users": "Utilisateurs",
+    "admin.databases": "Bases de données",
+    "admin.permissions": "Permissions",
+    "admin.settings": "Paramètres",
+    "admin.logout": "Déconnexion",
+    
+    "user.dashboard": "Espace Utilisateur",
+    "user.query_analysis": "Query Analysis",
+    "user.visualization": "Visualization",
+    "user.export": "Export",
+    "user.logout": "Déconnexion",
+    
+    "query.nlq_title": "Natural Language Query",
+    "query.placeholder": "Posez une question sur vos données...",
+    "query.run": "Exécuter",
+    "query.clear": "Effacer",
+    "query.generated": "Requête Générée",
+    "query.copy": "Copier",
+    "query.results": "Résultats & Insights",
+    "query.table": "Tableau",
+    "query.insights": "Insights IA",
+    
+    "common.success": "Succès",
+    "common.error": "Erreur",
+    "common.save": "Enregistrer",
+    "common.cancel": "Annuler",
+    "common.add": "Ajouter",
+    "common.edit": "Modifier",
+    "common.delete": "Supprimer"
+}

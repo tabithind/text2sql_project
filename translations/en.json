@@ -1,0 +1,40 @@
+{
+    "app.title": "QueryAI",
+    "login.title": "Sign in to your account",
+    "login.email": "Email",
+    "login.password": "Password",
+    "login.btn_user": "User Login",
+    "login.admin_link": "Are you a company admin?",
+    "login.btn_admin": "Access Admin Space",
+    
+    "admin.dashboard": "Admin Dashboard",
+    "admin.users": "Users",
+    "admin.databases": "Databases",
+    "admin.permissions": "Permissions",
+    "admin.settings": "Settings",
+    "admin.logout": "Logout",
+    
+    "user.dashboard": "User Workspace",
+    "user.query_analysis": "Query Analysis",
+    "user.visualization": "Visualization",
+    "user.export": "Export",
+    "user.logout": "Logout",
+    
+    "query.nlq_title": "Natural Language Query",
+    "query.placeholder": "Ask a question about your data...",
+    "query.run": "Run Query",
+    "query.clear": "Clear",
+    "query.generated": "Generated Query",
+    "query.copy": "Copy",
+    "query.results": "Results & Insights",
+    "query.table": "Table",
+    "query.insights": "AI Insights",
+    
+    "common.success": "Success",
+    "common.error": "Error",
+    "common.save": "Save",
+    "common.cancel": "Cancel",
+    "common.add": "Add",
+    "common.edit": "Edit",
+    "common.delete": "Delete"
+}
