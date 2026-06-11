@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS services_ia (
 INSERT IGNORE INTO services_ia (nom, type, endpoint) VALUES
 ('gpt',    'API', 'https://api.openai.com/v1/chat/completions'),
 ('claude', 'API', 'https://api.anthropic.com/v1/messages'),
-('gemini', 'API', 'https://generativelanguage.googleapis.com/v1/generate'),
+('gemini', 'API', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'),
 ('open_source', 'API', 'https://openrouter.ai/api/v1/chat/completions');
 
 -- ============================================================
@@ -236,6 +236,13 @@ def run_migrations():
                     ('open_source', 'API', 'https://openrouter.ai/api/v1/chat/completions')
                 )
                 conn.commit()
+
+            # Mettre à jour l'endpoint de gemini pour refléter gemini-1.5-flash
+            cur.execute(
+                "UPDATE services_ia SET endpoint = %s WHERE nom = 'gemini'",
+                ('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',)
+            )
+            conn.commit()
 
         conn.close()
         logger.info(f"✅ Base {DB_NAME} initialisée avec succès.")

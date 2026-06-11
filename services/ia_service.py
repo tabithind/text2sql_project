@@ -189,7 +189,7 @@ class IAService:
 
     @staticmethod
     def _call_gemini(api_key: str, full_prompt: str, is_mongodb: bool) -> str:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
         payload = {
             "contents": [{"parts": [{"text": full_prompt}]}],

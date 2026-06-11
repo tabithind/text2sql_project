@@ -30,7 +30,7 @@ COULEURS_DB = {
 SERVICES_IA = {
     'gpt'    : 'https://api.openai.com/v1/chat/completions',
     'claude' : 'https://api.anthropic.com/v1/messages',
-    'gemini' : 'https://generativelanguage.googleapis.com/v1/generate'
+    'gemini' : 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
 }
 
 # Configuration des champs pour chaque type de base de données
