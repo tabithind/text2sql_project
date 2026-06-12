@@ -1,8 +1,17 @@
+import sys
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+# Resolve the directory of the executable or script
+if hasattr(sys, '_MEIPASS'):
+    # Running as a bundled executable; .env should be next to the .exe
+    base_dir = os.path.dirname(sys.executable)
+else:
+    # Running in development mode
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+dotenv_path = os.path.join(base_dir, '.env')
+load_dotenv(dotenv_path)
 
 class Settings:
     # Central Database Configuration
