@@ -24,9 +24,15 @@ class ThemeManager:
 
     def apply_theme(self):
         try:
-            # We will read from styles/{theme}.qss later when UI is built.
-            # This is a placeholder for the actual reading logic.
-            with open(f"styles/{self._current_theme}.qss", "r") as f:
+            import sys
+            import os
+            # Resolve stylesheet path for PyInstaller or dev mode
+            if hasattr(sys, '_MEIPASS'):
+                styles_path = os.path.join(sys._MEIPASS, "styles", f"{self._current_theme}.qss")
+            else:
+                styles_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "styles", f"{self._current_theme}.qss")
+
+            with open(styles_path, "r") as f:
                 qss = f.read()
             app = QApplication.instance()
             if app:

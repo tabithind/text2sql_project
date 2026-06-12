@@ -21,7 +21,12 @@ class LanguageManager:
         return self._current_lang
 
     def _load_translations(self):
-        filepath = f"translations/{self._current_lang}.json"
+        import sys
+        if hasattr(sys, '_MEIPASS'):
+            filepath = os.path.join(sys._MEIPASS, "translations", f"{self._current_lang}.json")
+        else:
+            filepath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "translations", f"{self._current_lang}.json")
+            
         if os.path.exists(filepath):
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
