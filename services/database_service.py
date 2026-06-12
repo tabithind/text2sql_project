@@ -67,10 +67,15 @@ class DatabaseService:
             
             # Valider que les champs requis ne sont pas vides
             # Pour MongoDB, user et password sont optionnels
+            # Pour MySQL, password est optionnel
             if type_db == 'mongodb':
                 missing = [f for f in ['host', 'database'] if not locals().get(f)]
                 if missing:
                     raise ValueError(f"Paramètres manquants pour MongoDB : {', '.join(missing)}")
+            elif type_db == 'mysql':
+                missing = [f for f in ['host', 'user', 'database'] if not locals().get(f)]
+                if missing:
+                    raise ValueError(f"Paramètres obligatoires manquants pour MySQL : {', '.join(missing)}")
             else:
                 missing = [f for f in ['host', 'user', 'password', 'database'] if not locals().get(f)]
                 if missing:
@@ -218,7 +223,7 @@ class DatabaseService:
             import logging
             logging.getLogger(__name__).error(f"Erreur d'extraction automatique du schéma (manuel) : {ex}")
 
-        chiffrement = CryptoService.chiffrer(password_db)
+        chiffrement = CryptoService.chiffrer(password_db or "")
         conn = get_connection()
         try:
             with conn.cursor() as cur:

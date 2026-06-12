@@ -38,8 +38,8 @@ DB_FIELD_CONFIG = {
     'mysql': {
         'nom': 'MySQL',
         'icon': '🐬',
-        'champs_obligatoires': ['host', 'port', 'database', 'user', 'password'],
-        'champs_optionnels': ['charset'],
+        'champs_obligatoires': ['host', 'port', 'database', 'user'],
+        'champs_optionnels': ['password', 'charset'],
         'port_defaut': 3306,
         'info': 'MySQL est une base relationnelle populaire. Assurez-vous que le serveur MySQL est en cours d\'exécution.'
     },
